@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema Web</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="login-body">
+
+    <main class="form-signin">
+
+        <form id="formLogin">
+            <div id="logoLogin" class="logo-login logo-ok">
+                ✓
+            </div>
+
+            <h1 class="h3 mb-3 fw-normal text-center">Iniciar sesión</h1>
+
+            <div id="alertLogin" class="alert d-none" role="alert"></div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="usuario" placeholder="Usuario">
+                <label for="usuario">Usuario</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                <label for="password">Contraseña</label>
+            </div>
+
+            <button id="btnLogin" class="btn btn-primary w-100 py-2" type="submit">
+                Ingresar
+            </button>
+
+            <p class="mt-4 text-center text-muted">
+                Usuario: admin | Contraseña: 1234
+            </p>
+        </form>
+
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>
