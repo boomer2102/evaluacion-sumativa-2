@@ -1,22 +1,20 @@
 const usuarioGuardado = "admin";
 const passwordGuardado = "1234";
 
-const formLogin = document.getElementById("formLogin");
+const btnLogin = document.getElementById("btnLogin");
 const inputUsuario = document.getElementById("usuario");
 const inputPassword = document.getElementById("password");
 const alertLogin = document.getElementById("alertLogin");
 const logoLogin = document.getElementById("logoLogin");
 
-formLogin.addEventListener("submit", validarLogin);
+btnLogin.addEventListener("click", validarLogin);
 
-function validarLogin(event) {
-    event.preventDefault();
-
+function validarLogin() {
     const usuario = inputUsuario.value.trim();
     const password = inputPassword.value.trim();
 
     if (usuario === "" || password === "") {
-        mostrarAlerta("Debe completar todos los campos.", "warning");
+        mostrarAlerta("El campo usuario o contraseña está vacío.", "warning");
         cambiarLogoError();
         return;
     }
@@ -24,7 +22,7 @@ function validarLogin(event) {
     if (usuario === usuarioGuardado && password === passwordGuardado) {
         window.location.href = "dashboard.html";
     } else {
-        mostrarAlerta("Error en la autentificación. Usuario o contraseña incorrectos.", "danger");
+        mostrarAlerta("Hubo un error en la autentificación.", "danger");
         cambiarLogoError();
     }
 }
