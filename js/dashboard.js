@@ -17,36 +17,41 @@ function disminuirNumero() {
         numero = 15;
     }
 
-    actualizarEstado();
+    actualizarDashboard();
 }
 
-function actualizarEstado() {
+function actualizarDashboard() {
+
     if (numero >= 11 && numero <= 15) {
-        aplicarEstado(
+        cambiarEstado(
             "primary",
-            "Estado normal",
-            "Sistema en funcionamiento normal",
-            "El sistema se encuentra estable. No existen riesgos importantes.",
-            "https://placehold.co/600x350/0d6efd/ffffff?text=Estado+Normal",
+            "Estado Normal",
+            "Sistema en estado normal",
+            "El sistema funciona correctamente. No existen riesgos importantes.",
+            "https://placehold.co/600x300/0d6efd/ffffff?text=Estado+Normal",
             "Imagen de estado normal"
         );
-    } else if (numero >= 6 && numero <= 10) {
-        aplicarEstado(
+    }
+
+    if (numero >= 6 && numero <= 10) {
+        cambiarEstado(
             "warning",
-            "Estado de alerta",
-            "Precaución: nivel de advertencia",
-            "El sistema presenta una condición de alerta. Se recomienda revisar la situación.",
-            "https://placehold.co/600x350/ffc107/000000?text=Estado+Alerta",
-            "Imagen de estado alerta"
+            "Estado de Alerta",
+            "Sistema en estado de alerta",
+            "El sistema requiere atención. Se recomienda revisar la situación.",
+            "https://placehold.co/600x300/ffc107/000000?text=Estado+Alerta",
+            "Imagen de estado de alerta"
         );
-    } else if (numero >= 1 && numero <= 5) {
-        aplicarEstado(
+    }
+
+    if (numero >= 1 && numero <= 5) {
+        cambiarEstado(
             "danger",
-            "Estado de peligro",
-            "Peligro: nivel crítico",
-            "El sistema está en una fase crítica. Se debe actuar rápidamente.",
-            "https://placehold.co/600x350/dc3545/ffffff?text=Estado+Peligro",
-            "Imagen de estado peligro"
+            "Estado de Peligro",
+            "Sistema en estado crítico",
+            "El sistema se encuentra en una fase de peligro. Se debe actuar rápidamente.",
+            "https://placehold.co/600x300/dc3545/ffffff?text=Estado+Peligro",
+            "Imagen de estado de peligro"
         );
     }
 
@@ -54,7 +59,7 @@ function actualizarEstado() {
     cardFooter.textContent = `Número actual: ${numero}`;
 }
 
-function aplicarEstado(color, header, titulo, descripcion, imagen, alt) {
+function cambiarEstado(color, header, titulo, descripcion, imagen, alt) {
     btnPresionar.className = `btn btn-${color} btn-lg mb-4`;
 
     cardEstado.className = `card border-${color} shadow card-dashboard`;
