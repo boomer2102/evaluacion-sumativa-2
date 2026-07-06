@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema Web</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar navbar-dark bg-dark sticky-top flex-md-nowrap p-3 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">
+            Sistema de Alertas
+        </a>
+        <a href="index.html" class="btn btn-outline-light">Cerrar sesión</a>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <aside class="col-md-3 col-lg-2 d-md-block bg-light sidebar p-3">
+                <h5>Menú</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Estados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reportes</a>
+                    </li>
+                </ul>
+            </aside>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+
+                <section class="titulo-dashboard">
+                    <h1>Dashboard interactivo</h1>
+                    <p>
+                        Presiona el botón para cambiar el estado del sistema.
+                    </p>
+                </section>
+
+                <section class="contenedor-dashboard">
+
+                    <button id="btnPresionar" class="btn btn-primary btn-lg mb-4">
+                        Presióname 15
+                    </button>
+
+                    <div id="cardEstado" class="card border-primary shadow card-dashboard">
+                        <div id="cardHeader" class="card-header bg-primary text-white">
+                            Estado normal
+                        </div>
+
+                        <div class="card-body">
+                            <img id="cardImagen"
+                                src="https://placehold.co/600x350/0d6efd/ffffff?text=Estado+Normal"
+                                class="img-fluid rounded mb-3"
+                                alt="Imagen de estado normal">
+
+                            <h2 id="cardTitulo" class="card-title">
+                                Sistema en funcionamiento normal
+                            </h2>
+
+                            <p id="cardDescripcion" class="card-text">
+                                El sistema se encuentra estable. No existen riesgos importantes.
+                            </p>
+                        </div>
+
+                        <div id="cardFooter" class="card-footer bg-primary text-white">
+                            Número actual: 15
+                        </div>
+                    </div>
+
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

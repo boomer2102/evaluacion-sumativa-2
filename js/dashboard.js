@@ -1,0 +1,77 @@
+let numero = 15;
+
+const btnPresionar = document.getElementById("btnPresionar");
+const cardEstado = document.getElementById("cardEstado");
+const cardHeader = document.getElementById("cardHeader");
+const cardImagen = document.getElementById("cardImagen");
+const cardTitulo = document.getElementById("cardTitulo");
+const cardDescripcion = document.getElementById("cardDescripcion");
+const cardFooter = document.getElementById("cardFooter");
+
+btnPresionar.addEventListener("click", disminuirNumero);
+
+function disminuirNumero() {
+    numero--;
+
+    if (numero === 0) {
+        numero = 15;
+    }
+
+    actualizarEstado();
+}
+
+function actualizarEstado() {
+    if (numero >= 11 && numero <= 15) {
+        aplicarEstado(
+            "primary",
+            "Estado normal",
+            "Sistema en funcionamiento normal",
+            "El sistema se encuentra estable. No existen riesgos importantes.",
+            "https://placehold.co/600x350/0d6efd/ffffff?text=Estado+Normal",
+            "Imagen de estado normal"
+        );
+    } else if (numero >= 6 && numero <= 10) {
+        aplicarEstado(
+            "warning",
+            "Estado de alerta",
+            "Precaución: nivel de advertencia",
+            "El sistema presenta una condición de alerta. Se recomienda revisar la situación.",
+            "https://placehold.co/600x350/ffc107/000000?text=Estado+Alerta",
+            "Imagen de estado alerta"
+        );
+    } else if (numero >= 1 && numero <= 5) {
+        aplicarEstado(
+            "danger",
+            "Estado de peligro",
+            "Peligro: nivel crítico",
+            "El sistema está en una fase crítica. Se debe actuar rápidamente.",
+            "https://placehold.co/600x350/dc3545/ffffff?text=Estado+Peligro",
+            "Imagen de estado peligro"
+        );
+    }
+
+    btnPresionar.textContent = `Presióname ${numero}`;
+    cardFooter.textContent = `Número actual: ${numero}`;
+}
+
+function aplicarEstado(color, header, titulo, descripcion, imagen, alt) {
+    btnPresionar.className = `btn btn-${color} btn-lg mb-4`;
+
+    cardEstado.className = `card border-${color} shadow card-dashboard`;
+    cardHeader.className = `card-header bg-${color}`;
+    cardFooter.className = `card-footer bg-${color}`;
+
+    if (color === "warning") {
+        cardHeader.classList.add("text-dark");
+        cardFooter.classList.add("text-dark");
+    } else {
+        cardHeader.classList.add("text-white");
+        cardFooter.classList.add("text-white");
+    }
+
+    cardHeader.textContent = header;
+    cardTitulo.textContent = titulo;
+    cardDescripcion.textContent = descripcion;
+    cardImagen.src = imagen;
+    cardImagen.alt = alt;
+}

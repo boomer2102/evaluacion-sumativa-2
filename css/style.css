@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+}
+
+.login-body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 380px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.18);
+}
+
+.logo-login {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.logo-ok {
+    background-color: #0d6efd;
+}
+
+.logo-error {
+    background-color: #dc3545;
+}
+
+.sidebar {
+    min-height: calc(100vh - 70px);
+    border-right: 1px solid #ddd;
+}
+
+.titulo-dashboard {
+    margin-bottom: 30px;
+}
+
+.titulo-dashboard h1 {
+    font-weight: bold;
+}
+
+.contenedor-dashboard {
+    max-width: 700px;
+}
+
+.card-dashboard {
+    max-width: 650px;
+}
+
+.card-dashboard img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: scale(1.02);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #ffbf00;
+    outline-offset: 3px;
+}
